@@ -1,0 +1,31 @@
+import pandas
+data=pandas.read_csv("mini.csv")
+a=data["Gender"]
+d=data["Name"]
+female_count=0
+Male_count=0
+for i in a:
+    if i=="Female":
+        female_count=female_count+1
+print(f"Number of Female Affected by Covid are {female_count}")
+for i in a:
+    if i=="Male":
+        Male_count=Male_count+1
+print(f"Number of Male Affected by Covid are {Male_count}")
+print("Names of Female Affected by Covid are ")
+for i in range(len(a)):
+    if a[i] == "Female":
+        print(d[i])
+print("Names of Male Affected by Covid are ")
+for i in range(len(a)):
+    if a[i] == "Male":
+        print(d[i])
+total = 0
+for i in data["Age"]:
+    if i < 20:
+        total += 1
+print(f"Total number of people under 20: {total}")
+for i in data["Age"]:
+    if i > 50:
+        total += 1
+print(f"Total number of people above 50: {total}")
